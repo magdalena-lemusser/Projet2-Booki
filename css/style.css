@@ -64,12 +64,14 @@ body {
 .nav-list li {
 padding: 10px 15px;  /* there should be some space between the text and the upper margin, without adding margins! */
 border-top: 3px solid transparent; /*I added this so that the whole page doesn't move when the border shows up w hover*/
-transition: blue 0.3s ease; /* this is supposed to smooth the transition with the hover*/
+border-bottom: 3px solid transparent;
+transition: color 0.3s ease; /* this is supposed to smooth the transition with the hover*/
    }
 
 .nav-list li:hover {    
-    border-top: 3px solid blue; 
-    color: blue; 
+    border-top: 3px solid #0065FC; 
+    color: #0065FC; 
+    
 }
 
 a {
@@ -88,7 +90,7 @@ a {
 }
 
 .research-bar i {
-    background-color: #e7e7e7;
+    background-color: #F2F2F2;
     color: black;
     border-radius: 15px 0 0 15px;
     display: flex;
@@ -99,7 +101,7 @@ a {
 }
 
 .research-bar input {
-    border: 2px solid #e7e7e7;
+    border: 2px solid #F2F2F2;
     border-left: none;
     border-right: none;
     padding: 0 10px;
@@ -114,7 +116,7 @@ a {
 
 .research-bar button {
     border: none;
-    background-color: blue;
+    background-color: #0065FC;
     color: white;
     border-radius: 0 15px 15px 0;
     padding: 0 20px;
@@ -146,7 +148,7 @@ a {
 
 .filter-list .filter-btn {
     background-color: white;
-    border: 2px solid #e7e7e7;
+    border: 2px solid #F2F2F2;
     color: black; 
     padding: 13px; 
     border-radius: 30px;
@@ -178,7 +180,7 @@ a {
     display: flex; /*added this to make sure the icon would be properly placed within the circle! */
     align-items: center;
     justify-content: center;
-    border: 2px solid #e7e7e7;
+    border: 2px solid #F2F2F2;
     border-radius: 50%; /*use 50% border radius for circles! */
     width: 30px;
     height: 30px;
@@ -201,9 +203,17 @@ a {
     filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
 }
 
+.activites {
+    background-color: white;
+    border-radius: 20px;
+    padding: 0px;
+    filter: drop-shadow(0px 3px 15px rgba(0, 0, 0, 0.1));
+}
 .card img {
     object-fit: cover;
 }
+
+
 
 .card-title {
     font-size: 16px;
@@ -232,35 +242,45 @@ a {
 
 /****** Hebergements ***********/
 .hebergements {
-    width: 65%;
-    
-}
+    width: 65%;  
+   
+}   
 
+.hebergements-title {
+    margin-bottom: 30px;
+}
 
 .hebergements a{
-   display: inline-block;
-   width: 30%;
-   margin: 25px 20px 15px 0px; 
-
+    display: block;
+    text-decoration: none;
    }
 
+   /*switched to a grid layout for enhanced responsiveness*/
+
 .hebergements-cards {
-    display: flex;
-    flex-direction: row;
-    
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+   
 }
 
-.herbergements-cards img {
+.hebergements-cards img {
     width: 100%;
     height: 136px;
     border-radius: 20px;
+    
     
 }
 
 .card-content {
    margin: 5px;
-    
+  
 }
+
+.hebergements-plus {
+    margin-top: 30px;
+}
+
 
 /****** Populaires ***********/
 .populaires {
@@ -308,9 +328,80 @@ a {
     margin-bottom: 5px;
 }
 
+/* Activités a Marseille */
+
+.activites-marseille {
+    border-radius: 20px;
+    padding: 10px;
+    background-color: white;
+    margin-top: 30px; 
+    
+
+}
 
 
+/*gestion des proprietes display du lien des cartes */
+.activites-marseille a {
+    text-decoration: none;
+    display: inline-block;
+    max-width: 280px;
+   }
 
+/*arrangement des cartes */
+.activites-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr); /* 3 equal columns */
+  gap: 30px;
+}
+
+/*arrengement du contenu des cartes*/
+.activites-marseille .activites {
+  width: 100% ; 
+  height: 400px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+/*taille de l'image*/
+.activites-marseille img {
+  height: 350px;
+  width: 100%; 
+  object-fit: cover;
+  border-top-right-radius: 20px;
+  border-top-left-radius: 20px;
+  
+}
+
+/*titre des cartes d'activités */
+
+.activites-cards .activites-title {
+    
+    font-size: small;
+}
+
+/*contenu des cartes activité avec du padding*/
+
+.activites-cards .card-content {
+    padding-left: 15px;
+    
+}
+
+/*Footer*/
+
+footer {
+    background-color: var(--main-bg-color);
+    margin-top: 40px;
+   
+}
+
+.footer-section{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    gap: 30px;
+    padding-left: 20px; 
+    
+}
 /* Le code ci-dessous correspond à la version responsive uniquement */
 
 /****** Media queries ***********/
