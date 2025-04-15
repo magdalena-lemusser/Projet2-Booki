@@ -56,9 +56,9 @@ body {
     }
 
 .nav-logo {
-  
   margin-top: 15px;  /* the logo must have an upper margin or padding */
-  height: 20px;  
+  width: 75px;  
+  height: 25px;  
 }
 
 .nav-list li {
@@ -81,6 +81,7 @@ a {
 
 /*styling the research bar */
 
+
 .research-bar {
     display: flex;
     height: 45px;
@@ -97,21 +98,28 @@ a {
     align-items: center;
     justify-content: center;
     padding: 0 15px;
-    flex: 0 0 50px; /* flex grow-shrink-basis shorthand -don't grow, don't shrink */
+    /*flex: 0 0 50px; /* flex grow-shrink-basis shorthand -don't grow, don't shrink */
 }
 
+.research-bar .input-and-button{
+    display: flex;
+    flex-direction: row;
+    border: 1px solid #F2F2F2;
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px; 
+}
 .research-bar input {
-    border: 2px solid #F2F2F2;
-    border-left: none;
-    border-right: none;
+    border: none; 
     padding: 0 10px;
-    flex: 1; /* flex grow-shrink-basis shorthand - grow to fill the space!  */
+   /* flex: 1; /* flex grow-shrink-basis shorthand - grow to fill the space!  */
     font-weight: inherit; /*otherwise bold wouldn't show up*/
     text-align: center;
+    
 }
 
 .research-bar input::placeholder {
     color: black;
+    font-size: large;
 }
 
 .research-bar button {
@@ -120,8 +128,10 @@ a {
     color: white;
     border-radius: 0 15px 15px 0;
     padding: 0 20px;
-    flex: 0 0 auto; /* flex grow-shrink-basis shorthand -don't grow, don't shrink */
+   /* flex: 0 0 auto; /* flex grow-shrink-basis shorthand -don't grow, don't shrink */
+    font-size: large;
     font-weight: inherit;
+    
 }
 
 /*removing the magnifying glass for desktop version*/
@@ -139,16 +149,20 @@ a {
    margin-top: 10px; 
 }
 
+.filter-section h2 {
+    margin-right: 10px;
+}
+
 .filter-section .filter-list {
     list-style: none; 
     display: flex;
     gap: 15px; 
-    padding: 10px; 
+    padding: 0px; 
 }
 
 .filter-list .filter-btn {
     background-color: white;
-    border: 2px solid #F2F2F2;
+    border: 3px solid rgb(229, 229, 229);
     color: black; 
     padding: 13px; 
     border-radius: 30px;
@@ -339,6 +353,10 @@ a {
 
 }
 
+.activites-marseille .activites-section-title  {
+    margin-top: 20px; 
+    margin-bottom: 20px;
+}
 
 /*gestion des proprietes display du lien des cartes */
 .activites-marseille a {
@@ -354,30 +372,36 @@ a {
   gap: 30px;
 }
 
+
 /*arrengement du contenu des cartes*/
 .activites-marseille .activites {
-  width: 100% ; 
-  height: 400px;
-    display: flex;
-    flex-direction: column;
-}
-
-
-/*taille de l'image*/
-.activites-marseille img {
-  height: 350px;
-  width: 100%; 
-  object-fit: cover;
-  border-top-right-radius: 20px;
-  border-top-left-radius: 20px;
+    width: 100% ; 
+    height: 410px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /*spaces elements out on the main axis -vertically- */
+  }
   
-}
+  
+  /*taille de l'image*/
+  .activites-marseille img {
+    height: 350px;
+    width: 100%; 
+    object-fit: cover;  
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    max-height: 350px;
+  min-height: 350px;
+  }
+
+ 
 
 /*titre des cartes d'activités */
 
 .activites-cards .activites-title {
     
     font-size: small;
+
 }
 
 /*contenu des cartes activité avec du padding*/
@@ -437,9 +461,169 @@ footer {
     .populaires-cards .card-subtitle {
         font-size: 13px;
     }
+
+    .activites-marseille {
+        width: 100%;
+    }
+
+.activites-marseille .activites {
+    width: 100%  ; 
+    height: 250px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /*spaces elements out on the main axis -vertically- */
+  }
+  
+  
+  /*taille de l'image*/
+  .activites-marseille img {
+    height: 190px;
+    width: 100%; 
+    object-fit: cover;  
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    max-height: 190px;
+  min-height: 190px;
+  }
+
+
 }
 
 /* Small devices (phones, less than 768px) */
 @media (max-width: 767.98px) {
-    /* ... */
+
+    .main-container {
+        padding: 0px; 
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    header p {
+        font-size:small; 
+    }
+    .nav-bar {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        
+        margin-top: 20px; 
+        }
+    
+    .nav-logo {
+        margin:auto;
+    }
+    .nav-list {
+        padding: 0px; 
+        margin-top: 20px; 
+       display: flex;
+       flex-direction: row;
+       justify-content: space-around;
+       border-bottom: 3px solid  #F2F2F2;
+    }
+    
+    .nav-list:hover {
+        border-bottom: 3px solid transparent; 
+    }
+
+    .nav-list li {
+        width: 50% ;
+        margin: 0px; 
+        padding: 0px;
+        text-align: center;
+        border-bottom: 3px solid transparent;
+        }
+
+    .nav-list li:hover {
+    border-bottom: 3px solid #0065FC; 
+    border-top: 3px solid transparent; 
+    color: #0065FC; 
+    
+    }
+
+    header {
+        padding: 15px;
+        margin: 0px; 
+    }
+
+  
+    .research-bar {
+        margin-top: 25px; 
+        width: 100%;
+
+    }
+
+      
+    .research-bar button {
+        
+        padding: 0px; 
+        border-top-left-radius: 15px;
+        border-bottom-left-radius: 15px;
+        box-shadow: 0px 3px 6px rgba(0, 0, 0, 0.4) ;
+
+    }
+
+    .research-bar input  {
+        min-width: 95%; 
+        padding: 0px; 
+        border: none; 
+    }
+
+  
+    .search-btn .btn-icon {
+        display: inline; 
+
+    }
+
+    .search-btn .btn-label {
+        display: none; 
+    }
+
+    .filter-section {
+        display: block; 
+        padding: 0px; 
+        margin: 0px; 
+       
+            }  
+
+    
+    
+    .filter-list {
+                display: flex; 
+                flex-direction: row;
+                flex-wrap: wrap;
+                justify-content: space-between;
+                width: 100%;
+                margin: 0px; 
+                              
+            }
+
+    .filter-section button {
+        min-width: 47%;
+        max-width: 47%; 
+        
+       display: flex;
+       justify-content: center;
+       align-items: center;
+       padding: 0px; 
+      
+    }
+    
+    .info-bar {
+        width: 100%;
+        margin-top: 30px; 
+    }
+
+    .info-bar .info-text {
+        
+            font-size: 13px;
+        
+    }
+ 
+    .info-bar .info-icon {
+        font-size: 13px;
+        max-height: 24px; /*MAKE IT BIGGER*/
+
+    }
 }
